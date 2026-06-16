@@ -28,14 +28,14 @@ def check_password(password):
 
     
     seconds = (2 ** entropy / 2) / 10_000_000_000 if entropy else 0
-    if   seconds < 1:         crack = "instant"
-    elif seconds < 60:        crack = f"{int(seconds)} seconds"
-    elif seconds < 3600:      crack = f"{int(seconds / 60)} minutes"
-    elif seconds < 86400:     crack = f"{int(seconds / 3600)} hours"
+    if   seconds < 1:crack = "instant"
+    elif seconds < 60:crack = f"{int(seconds)} seconds"
+    elif seconds < 3600:crack = f"{int(seconds / 60)} minutes"
+    elif seconds < 86400:crack = f"{int(seconds / 3600)} hours"
     elif seconds < 31_536_000:crack = f"{int(seconds / 86400)} days"
-    elif seconds < 3.15e9:    crack = f"{int(seconds / 31_536_000)} years"
-    elif seconds < 3.15e12:   crack = f"{int(seconds / 3.15e9):,}K years"
-    else:                     crack = "billions of years"
+    elif seconds < 3.15e9:crack = f"{int(seconds / 31_536_000)} years"
+    elif seconds < 3.15e12:crack = f"{int(seconds / 3.15e9):,}K years"
+    else:crack = "billions of years"
 
     
     print(f"\n  Password  : {'*' * len(password)}  ({len(password)} digits)")
