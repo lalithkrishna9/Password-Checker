@@ -8,7 +8,7 @@ def check_password(password):
         "Uppercase letter":bool(re.search(r"[A-Z]", password)),
         "Lowercase letter":bool(re.search(r"[a-z]", password)),
         "Number (0-9)":bool(re.search(r"[0-9]", password)),
-        "Special character":bool(re.search(r"[~!@#$%^&*()_+[]\|;':,./<?`?]", password)),
+        "Special character":bool(re.search(r"[~!@#$%^&*()_+[]\|;':,./<?`]", password)),
         "12+ characters (recommended)":  len(password) >= 12,
     }
     score = sum(rules.values())
